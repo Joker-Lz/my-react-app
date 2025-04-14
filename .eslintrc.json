@@ -28,9 +28,19 @@
       "version": "detect"
     },
     "import/resolver": {
-      "typescript": {}
+      "typescript": {
+        "alwaysTryTypes": true
+      }
     }
   },
+  "overrides": [
+    {
+      "files": ["*.js", "*.cjs"],
+      "parserOptions": {
+        "project": null // 对 JS 文件禁用 TypeScript 校验
+      }
+    }
+  ],
   "rules": {
     // TypeScript 规则
     "@typescript-eslint/no-explicit-any": "warn",
